@@ -28,6 +28,15 @@ class ExpenseTrackerApp extends StatelessWidget {
         Get.put(TransactionController());
       }),
       home: const HomeScreen(),
+
+      // ✅ Add the SafeArea wrapper here using builder
+      builder: (context, child) {
+        return SafeArea(
+          top: false, // No padding on top
+          bottom: true, // Add padding at bottom to avoid navigation bar
+          child: child!,
+        );
+      },
     );
   }
 }
